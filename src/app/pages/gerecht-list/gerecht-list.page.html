@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Mijn Gerechten</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/gerecht">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+ 
+  <ion-grid>
+    <ion-row>
+      <ion-col button [routerLink]="['/gerecht', gerecht.id]" *ngFor="let gerecht of (gerechten | async)">
+        <ion-card>
+          <ion-card-header>
+            <ion-img width="40" height="80" src="{{ gerecht.photo }}"></ion-img>
+            <ion-card-title>{{ gerecht.name }}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-list>
+
+    
+
+  </ion-list>
+</ion-content>
